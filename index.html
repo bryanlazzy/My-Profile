@@ -5,6 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bryan Lazaro - Software Engineer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="style/styles.css">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
@@ -26,41 +29,54 @@
 
 <body>
   <header>
-    <nav class="container">
-      <div class="logo">Bryan Lazaro</div>
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+    <nav class="navbar navbar-expand-lg fixed-top bg-dark navbar-dark">
+      <div class="container">
+        <a class="navbar-brand logo" href="#">BL</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <div class="hamburger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto nav-links">
+            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+            <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
     </nav>
   </header>
 
   <section id="home" class="hero">
-    <div class="container">
-      <div class="hero-content">
-        <div class="hero-text">
+    <div class="container d-flex align-items-center" style="min-height: 100vh;">
+      <div class="row align-items-center">
+        <div class="col-lg-8 hero-text">
           <div class="hero-subtitle">Computer Engineering Graduate</div>
           <h1>Bryan Lazaro</h1>
-          <p>A Computer Engineering graduate specializing in Software Engineering. Passionate about creating efficient, scalable applications and contributing to innovative technology solutions.</p>
-          <div class="cta-buttons">
-            <a href="#contact" class="cta-primary">Get In Touch</a>
-            <a href="#projects" class="cta-secondary">View My Work</a>
+          <p>A Computer Engineering graduate specializing in Software Engineering. Passionate about creating
+            efficient, scalable applications and contributing to innovative technology solutions.</p>
+          <div class="d-flex gap-3">
+            <a href="#contact" class="btn cta-primary">Get In Touch</a>
+            <a href="#projects" class="btn cta-secondary">View My Work</a>
           </div>
         </div>
-        <div class="hero-visual">
-          <div class="hero-stats">
-            <div class="stat-item">
+        <div class="col-lg-4 d-flex justify-content-center mt-5 mt-lg-0">
+          <div class="hero-stats p-4">
+            <div class="stat-item mb-4">
               <span class="stat-number">2023</span>
               <span class="stat-label">Graduate</span>
             </div>
-            <div class="stat-item">
+            <div class="stat-item mb-4">
               <span class="stat-number">15+</span>
               <span class="stat-label">Projects Completed</span>
             </div>
-            <div class="stat-item">
+            <div class="stat-item mb-4">
               <span class="stat-number">8+</span>
               <span class="stat-label">Technologies</span>
             </div>
@@ -74,319 +90,381 @@
     </div>
   </section>
 
-  <section id="about" class="section">
+  <section id="about" class="section py-5">
     <div class="container">
-      <h2 class="section-title">About Me</h2>
-      <p class="section-subtitle">Driven by curiosity and powered by code, I'm ready to make an impact in the software engineering world.</p>
-      <div class="about-content">
-        <div class="about-image" id="aboutImage">
-          <div class="image-card">
-            <div class="card-front">
-              <img src="images/avatar.png" alt="bryan-avatar">
-            </div>
-            <div class="card-back">
-              <img src="images/bgl.jpg" alt="bryan-real-photo">
+      <div class="text-center mb-5">
+        <h2 class="section-title">About Me</h2>
+        <p class="section-subtitle">Driven by curiosity and powered by code, I'm ready to make an impact in the software
+          engineering world.</p>
+      </div>
+
+      <div class="row align-items-start gy-5">
+        <div class="col-lg-5 d-flex justify-content-center">
+          <div class="about-image" id="aboutImage">
+            <div class="image-card">
+              <div class="card-front">
+                <img src="images/avatar.png" alt="bryan-avatar" class="img-fluid">
+              </div>
+              <div class="card-back">
+                <img src="images/bgl.jpg" alt="bryan-real-photo" class="img-fluid">
+              </div>
             </div>
           </div>
         </div>
-        <div class="about-text">
-          <p>As a Computer Engineering graduate with a specialization in Software Engineering, I bring fresh perspectives and cutting-edge knowledge to software development challenges. My academic journey has equipped me with a solid foundation in
-            programming principles, system design, and modern development practices.</p>
-          <h3>Educational Foundation</h3>
-          <p>Throughout my degree, I've maintained a strong focus on practical application of theoretical concepts. From data structures and algorithms to software architecture patterns, I've built comprehensive knowledge that translates directly to
-            real-world development scenarios.</p>
-          <h3>Technical Approach</h3>
-          <p>I believe in writing clean, maintainable code that scales effectively. My approach emphasizes best practices, thorough testing, and continuous learning to stay current with evolving technologies and industry standards.</p>
+
+        <div class="col-lg-7">
+          <div class="about-text">
+            <p>As a Computer Engineering graduate with a specialization in Software Engineering, I bring fresh
+              perspectives and cutting-edge knowledge to software development challenges. My academic journey has
+              equipped me with a solid foundation in programming principles, system design, and modern development
+              practices.</p>
+            <h3 class="mt-4">Educational Foundation</h3>
+            <p>Throughout my degree, I've maintained a strong focus on practical application of theoretical concepts.
+              From data structures and algorithms to software architecture patterns, I've built comprehensive knowledge
+              that translates directly to real-world development scenarios.</p>
+            <h3 class="mt-4">Technical Approach</h3>
+            <p>I believe in writing clean, maintainable code that scales effectively. My approach emphasizes best
+              practices, thorough testing, and continuous learning to stay current with evolving technologies and
+              industry standards.</p>
+          </div>
         </div>
       </div>
-      <div class="about-highlights">
-        <div class="highlight-item">
-          <div class="highlight-icon">🎓</div>
-          <h4>Academic Excellence</h4>
-          <p>Strong theoretical foundation with practical application through coursework and projects</p>
-        </div>
-        <div class="highlight-item">
-          <div class="highlight-icon">💡</div>
-          <h4>Problem Solver</h4>
-          <p>Analytical mindset with ability to break down complex problems into manageable solutions</p>
-        </div>
-        <div class="highlight-item">
-          <div class="highlight-icon">🚀</div>
-          <h4>Quick Learner</h4>
-          <p>Adaptable to new technologies and frameworks with proven track record of rapid skill acquisition</p>
-        </div>
-        <div class="highlight-item">
-          <div class="highlight-icon">🤝</div>
-          <h4>Team Player</h4>
-          <p>Collaborative approach with experience in group projects and agile development methodologies</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section id="skills" class="section">
-    <div class="container">
-      <h2 class="section-title">Technical Skills</h2>
-      <p class="section-subtitle">Comprehensive skill set developed through academic coursework, personal projects, and continuous learning.</p>
-
-      <div class="skills-grid">
-        <div class="skill-category">
-          <h3>💻 Programming Languages</h3>
-          <div class="skill-item">
-            <div class="skill-header">
-              <span class="skill-name">C#</span>
-              <span class="skill-level">Advanced</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="85">
-                <span class="skill-percentage">85%</span>
-              </div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-header">
-              <span class="skill-name">Python</span>
-              <span class="skill-level">Advanced</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="80">
-                <span class="skill-percentage">80%</span>
-              </div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-header">
-              <span class="skill-name">C++</span>
-              <span class="skill-level">Intermediate</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="75">
-                <span class="skill-percentage">75%</span>
-              </div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-header">
-              <span class="skill-name">Excel VBA</span>
-              <span class="skill-level">Intermediate</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="65">
-                <span class="skill-percentage">65%</span>
-              </div>
-            </div>
+      <div class="row gx-4 gy-4 mt-5">
+        <div class="col-md-6 col-lg-3">
+          <div class="highlight-item p-4">
+            <div class="highlight-icon">🎓</div>
+            <h4>Academic Excellence</h4>
+            <p class="mb-0">Strong theoretical foundation with practical application through coursework and projects</p>
           </div>
         </div>
-
-        <div class="skill-category">
-          <h3>🌐 Web Development</h3>
-          <div class="skill-item">
-            <div class="skill-header">
-              <span class="skill-name">HTML/CSS</span>
-              <span class="skill-level">Advanced</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="90">
-                <span class="skill-percentage">90%</span>
-              </div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-header">
-              <span class="skill-name">PHP</span>
-              <span class="skill-level">Intermediate</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="70">
-                <span class="skill-percentage">70%</span>
-              </div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-header">
-              <span class="skill-name">JavaScript</span>
-              <span class="skill-level">Intermediate</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="60">
-                <span class="skill-percentage">60%</span>
-              </div>
-            </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="highlight-item p-4">
+            <div class="highlight-icon">💡</div>
+            <h4>Problem Solver</h4>
+            <p class="mb-0">Analytical mindset with ability to break down complex problems into manageable solutions</p>
           </div>
         </div>
-
-        <div class="skill-category">
-          <h3>🛠️ Tools & Technologies</h3>
-          <div class="skill-item">
-            <div class="skill-header">
-              <span class="skill-name">Git/GitHub</span>
-              <span class="skill-level">Advanced</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="85">
-                <span class="skill-percentage">85%</span>
-              </div>
-            </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="highlight-item p-4">
+            <div class="highlight-icon">🚀</div>
+            <h4>Quick Learner</h4>
+            <p class="mb-0">Adaptable to new technologies and frameworks with proven track record of rapid skill
+              acquisition</p>
           </div>
-          <div class="skill-item">
-            <div class="skill-header">
-              <span class="skill-name">MySQL</span>
-              <span class="skill-level">Advanced</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="85">
-                <span class="skill-percentage">85%</span>
-              </div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-header">
-              <span class="skill-name">Microsoft SQL</span>
-              <span class="skill-level">Advanced</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="82">
-                <span class="skill-percentage">82%</span>
-              </div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-header">
-              <span class="skill-name">WordPress</span>
-              <span class="skill-level">Intermediate</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" data-width="65">
-                <span class="skill-percentage">65%</span>
-              </div>
-            </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="highlight-item p-4">
+            <div class="highlight-icon">🤝</div>
+            <h4>Team Player</h4>
+            <p class="mb-0">Collaborative approach with experience in group projects and agile development methodologies
+            </p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="projects" class="section">
+  <section id="skills" class="section py-5">
     <div class="container">
-      <h2 class="section-title">Featured Projects</h2>
-      <p class="section-subtitle">A showcase of academic and personal projects demonstrating practical application of software engineering principles.</p>
+      <div class="text-center mb-5">
+        <h2 class="section-title">Technical Skills</h2>
+        <p class="section-subtitle">Comprehensive skill set developed through academic coursework, personal projects,
+          and continuous learning.</p>
+      </div>
 
-      <div class="projects-grid">
-        <div class="project-card">
-          <div class="project-header">
-            <div class="project-icon">🌱</div>
-            <h3>Smart Controllable Plant Growth Simulation System</h3>
-          </div>
-          <p>System that allows users to monitor and maintain optimal temperature and humidity for their chosen plants via a web interface. The website, hosted locally using XAMPP, connects to databases using SSMS for user profiles and MySQL for
-            plant data. My main role was handling the hardware: I programmed the system using C++ in Arduino IDE, assembled the components, and enabled Wi-Fi connectivity to send sensor readings to the database every five seconds.</p>
-          <div class="project-tags">
-            <span class="tag">HTML/CSS</span>
-            <span class="tag">PHP</span>
-            <span class="tag">C++</span>
-            <span class="tag">Microsoft SQL</span>
-            <span class="tag">MySQL</span>
-            <span class="tag">XAMPP</span>
-            <span class="tag">Arduino</span>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <div class="col">
+          <div class="skill-category p-4">
+            <h3>💻 Programming Languages</h3>
+            <div class="skill-item d-flex justify-content-between align-items-center mb-3">
+              <div class="d-flex w-100 me-3">
+                <span class="skill-name flex-grow-1">C#</span>
+                <span class="skill-level">Advanced</span>
+              </div>
+              <div class="progress flex-grow-1" style="height: 6px;">
+                <div class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0"
+                  aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="skill-item d-flex justify-content-between align-items-center mb-3">
+              <div class="d-flex w-100 me-3">
+                <span class="skill-name flex-grow-1">Python</span>
+                <span class="skill-level">Advanced</span>
+              </div>
+              <div class="progress flex-grow-1" style="height: 6px;">
+                <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0"
+                  aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="skill-item d-flex justify-content-between align-items-center mb-3">
+              <div class="d-flex w-100 me-3">
+                <span class="skill-name flex-grow-1">C++</span>
+                <span class="skill-level">Intermediate</span>
+              </div>
+              <div class="progress flex-grow-1" style="height: 6px;">
+                <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0"
+                  aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="skill-item d-flex justify-content-between align-items-center mb-3">
+              <div class="d-flex w-100 me-3">
+                <span class="skill-name flex-grow-1">Excel VBA</span>
+                <span class="skill-level">Intermediate</span>
+              </div>
+              <div class="progress flex-grow-1" style="height: 6px;">
+                <div class="progress-bar" role="progressbar" style="width: 65%;" aria-valuenow="65" aria-valuemin="0"
+                  aria-valuemax="100"></div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="project-card">
-          <div class="project-header">
-            <div class="project-icon">💉</div>
-            <h3>COVID-19 Vaccine Record Tracking</h3>
-          </div>
-          <p>A web application that allows the user to register to upload their vaccination status on the database and letting admins view profiles how many registered users or users in a specific city or baranggay in Cavite are vaccinated without
-            booster, with booster, and no vaccination at all </p>
-          <div class="project-tags">
-            <span class="tag">HTML/CSS</span>
-            <span class="tag">PHP</span>
-            <span class="tag">Microsoft SQL</span>
-            <span class="tag">XAMPP</span>
+        <div class="col">
+          <div class="skill-category p-4">
+            <h3>🌐 Web Development</h3>
+            <div class="skill-item d-flex justify-content-between align-items-center mb-3">
+              <div class="d-flex w-100 me-3">
+                <span class="skill-name flex-grow-1">HTML/CSS</span>
+                <span class="skill-level">Advanced</span>
+              </div>
+              <div class="progress flex-grow-1" style="height: 6px;">
+                <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0"
+                  aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="skill-item d-flex justify-content-between align-items-center mb-3">
+              <div class="d-flex w-100 me-3">
+                <span class="skill-name flex-grow-1">PHP</span>
+                <span class="skill-level">Intermediate</span>
+              </div>
+              <div class="progress flex-grow-1" style="height: 6px;">
+                <div class="progress-bar" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0"
+                  aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="skill-item d-flex justify-content-between align-items-center mb-3">
+              <div class="d-flex w-100 me-3">
+                <span class="skill-name flex-grow-1">JavaScript</span>
+                <span class="skill-level">Intermediate</span>
+              </div>
+              <div class="progress flex-grow-1" style="height: 6px;">
+                <div class="progress-bar" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0"
+                  aria-valuemax="100"></div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="project-card">
-          <div class="project-header">
-            <div class="project-icon">🎫</div>
-            <h3>Smart Queue Management System</h3>
-          </div>
-          <p>A web application that helps users not wait in line when in queue. Instead of staying in line, the users only need to register to the kiosk and wait for the system to text them that they are next in line.</p>
-          <div class="project-tags">
-            <span class="tag">HTML/CSS</span>
-            <span class="tag">MySQL</span>
-            <span class="tag">PHP</span>
-            <span class="tag">JavaScript</span>
-            <span class="tag">C++</span>
-            <span class="tag">Arduino</span>
-            <span class="tag">XAMPP</span>
+        <div class="col">
+          <div class="skill-category p-4">
+            <h3>🛠️ Tools & Technologies</h3>
+            <div class="skill-item d-flex justify-content-between align-items-center mb-3">
+              <div class="d-flex w-100 me-3">
+                <span class="skill-name flex-grow-1">Git/GitHub</span>
+                <span class="skill-level">Advanced</span>
+              </div>
+              <div class="progress flex-grow-1" style="height: 6px;">
+                <div class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0"
+                  aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="skill-item d-flex justify-content-between align-items-center mb-3">
+              <div class="d-flex w-100 me-3">
+                <span class="skill-name flex-grow-1">MySQL</span>
+                <span class="skill-level">Advanced</span>
+              </div>
+              <div class="progress flex-grow-1" style="height: 6px;">
+                <div class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0"
+                  aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="skill-item d-flex justify-content-between align-items-center mb-3">
+              <div class="d-flex w-100 me-3">
+                <span class="skill-name flex-grow-1">Microsoft SQL</span>
+                <span class="skill-level">Advanced</span>
+              </div>
+              <div class="progress flex-grow-1" style="height: 6px;">
+                <div class="progress-bar" role="progressbar" style="width: 82%;" aria-valuenow="82" aria-valuemin="0"
+                  aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="skill-item d-flex justify-content-between align-items-center mb-3">
+              <div class="d-flex w-100 me-3">
+                <span class="skill-name flex-grow-1">WordPress</span>
+                <span class="skill-level">Intermediate</span>
+              </div>
+              <div class="progress flex-grow-1" style="height: 6px;">
+                <div class="progress-bar" role="progressbar" style="width: 65%;" aria-valuenow="65" aria-valuemin="0"
+                  aria-valuemax="100"></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="contact" class="section">
+  <section id="projects" class="section py-5">
     <div class="container">
-      <h2 class="section-title">Let's Connect</h2>
-      <p class="section-subtitle">Ready to contribute to innovative projects and grow as a software engineer. Let's discuss opportunities and collaborations.</p>
+      <div class="text-center mb-5">
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-subtitle">A showcase of academic and personal projects demonstrating practical application of
+          software engineering principles.</p>
+      </div>
 
-      <div class="contact-content">
-        <div class="contact-info">
-          <h3>Get In Touch</h3>
-          <p>I'm actively seeking opportunities to begin my career in software engineering. Whether you're looking for a dedicated team member or interested in discussing technology, I'd love to hear from you.</p>
-
-          <div class="contact-item">
-            <div class="contact-icon">📧</div>
-            <div class="contact-details">
-              <strong>Email</strong>
-              <span>bryanlazaro35@gmail.com</span>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <div class="col">
+          <div class="project-card h-100 p-4">
+            <div class="project-header d-flex align-items-center mb-3">
+              <div class="project-icon me-3">🌱</div>
+              <h3 class="h5 m-0">Smart Controllable Plant Growth Simulation System</h3>
             </div>
-          </div>
-
-          <div class="contact-item">
-            <div class="contact-icon">💼</div>
-            <div class="contact-details">
-              <strong>LinkedIn</strong>
-              <span>linkedin.com/in/bryan-lazaro-5672b9267</span>
-            </div>
-          </div>
-
-          <div class="contact-item">
-            <div class="contact-icon">🐙</div>
-            <div class="contact-details">
-              <strong>GitHub</strong>
-              <span>github.com/bryanlazzy</span>
-            </div>
-          </div>
-
-          <div class="contact-item">
-            <div class="contact-icon">📍</div>
-            <div class="contact-details">
-              <strong>Location</strong>
-              <span>San Pablo City, Laguna</span>
+            <p class="mb-4">System that allows users to monitor and maintain optimal temperature and humidity for their
+              chosen plants via a web interface. The website, hosted locally using XAMPP, connects to databases using
+              SSMS for user profiles and MySQL for plant data. My main role was handling the hardware: I programmed the
+              system using C++ in Arduino IDE, assembled the components, and enabled Wi-Fi connectivity to send sensor
+              readings to the database every five seconds.</p>
+            <div class="project-tags">
+              <span class="tag">HTML/CSS</span>
+              <span class="tag">PHP</span>
+              <span class="tag">C++</span>
+              <span class="tag">Microsoft SQL</span>
+              <span class="tag">MySQL</span>
+              <span class="tag">XAMPP</span>
+              <span class="tag">Arduino</span>
             </div>
           </div>
         </div>
 
-        <div class="contact-cta">
-          <h3>Ready to Start</h3>
-          <p>I'm excited about the possibility of contributing to your team and growing my skills in a professional environment. Let's discuss how my fresh perspective and technical foundation can add value to your projects.</p>
-          <a href="mailto:bryanlazaro35@gmail.com" class="cta-primary">Send Message</a>
+        <div class="col">
+          <div class="project-card h-100 p-4">
+            <div class="project-header d-flex align-items-center mb-3">
+              <div class="project-icon me-3">💉</div>
+              <h3 class="h5 m-0">COVID-19 Vaccine Record Tracking</h3>
+            </div>
+            <p class="mb-4">A web application that allows the user to register to upload their vaccination status on the
+              database and letting admins view profiles how many registered users or users in a specific city or
+              baranggay in Cavite are vaccinated without booster, with booster, and no vaccination at all </p>
+            <div class="project-tags">
+              <span class="tag">HTML/CSS</span>
+              <span class="tag">PHP</span>
+              <span class="tag">Microsoft SQL</span>
+              <span class="tag">XAMPP</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="project-card h-100 p-4">
+            <div class="project-header d-flex align-items-center mb-3">
+              <div class="project-icon me-3">🎫</div>
+              <h3 class="h5 m-0">Smart Queue Management System</h3>
+            </div>
+            <p class="mb-4">A web application that helps users not wait in line when in queue. Instead of staying in
+              line, the users only need to register to the kiosk and wait for the system to text them that they are next
+              in line.</p>
+            <div class="project-tags">
+              <span class="tag">HTML/CSS</span>
+              <span class="tag">MySQL</span>
+              <span class="tag">PHP</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">C++</span>
+              <span class="tag">Arduino</span>
+              <span class="tag">XAMPP</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <footer>
+  <section id="contact" class="section py-5">
     <div class="container">
-      <p>&copy; 2025 Bryan Lazaro. Crafting the future through code.</p>
+      <div class="text-center mb-5">
+        <h2 class="section-title">Let's Connect</h2>
+        <p class="section-subtitle">Ready to contribute to innovative projects and grow as a software engineer. Let's
+          discuss opportunities and collaborations.</p>
+      </div>
+
+      <div class="row g-5">
+        <div class="col-lg-6">
+          <div class="contact-info">
+            <h3 class="h4 mb-3">Get In Touch</h3>
+            <p class="mb-4">I'm actively seeking opportunities to begin my career in software engineering. Whether
+              you're looking for a dedicated team member or interested in discussing technology, I'd love to hear from
+              you.</p>
+
+            <ul class="list-unstyled">
+              <li class="contact-item p-3 mb-3">
+                <div class="contact-icon me-3">📧</div>
+                <div class="contact-details">
+                  <strong class="d-block">Email</strong>
+                  <span class="text-secondary">bryanlazaro35@gmail.com</span>
+                </div>
+              </li>
+              <li class="contact-item p-3 mb-3">
+                <div class="contact-icon me-3">💼</div>
+                <div class="contact-details">
+                  <strong class="d-block">LinkedIn</strong>
+                  <span class="text-secondary">linkedin.com/in/bryan-lazaro-5672b9267</span>
+                </div>
+              </li>
+              <li class="contact-item p-3 mb-3">
+                <div class="contact-icon me-3">🐙</div>
+                <div class="contact-details">
+                  <strong class="d-block">GitHub</strong>
+                  <span class="text-secondary">github.com/bryanlazzy</span>
+                </div>
+              </li>
+              <li class="contact-item p-3 mb-3">
+                <div class="contact-icon me-3">📍</div>
+                <div class="contact-details">
+                  <strong class="d-block">Location</strong>
+                  <span class="text-secondary">San Pablo City, Laguna</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="contact-cta p-5 text-center">
+            <h3 class="h4 mb-3">Ready to Start</h3>
+            <p class="mb-4">I'm excited about the possibility of contributing to your team and growing my skills in a
+              professional environment. Let's discuss how my fresh perspective and technical foundation can add value to
+              your projects.</p>
+            <a href="mailto:bryanlazaro35@gmail.com" class="btn cta-primary">Send Message</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-dark text-center py-4">
+    <div class="container">
+      <p class="m-0 text-white-50">&copy; 2025 Bryan Lazaro. Crafting the future through code.</p>
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
+
   <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const hamburgerButton = document.querySelector('.navbar-toggler');
+      const hamburgerIcon = document.querySelector('.hamburger-icon');
+
+      hamburgerButton.addEventListener('click', function () {
+        // Toggle a custom class on the hamburger icon
+        hamburgerIcon.classList.toggle('hamburger-toggled');
+      });
+    });
+
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
+      anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
@@ -433,39 +511,38 @@
       observer.observe(section);
     });
 
-    // Animate progress bars on page load
-    document.addEventListener('DOMContentLoaded', function() {
-      const progressBars = document.querySelectorAll('.skill-progress');
+    // Animate progress bars on scroll
+    document.addEventListener('DOMContentLoaded', function () {
+      const progressBars = document.querySelectorAll('.progress-bar');
 
-      // Add intersection observer for better performance
-      const observer = new IntersectionObserver((entries) => {
+      const observerOptions = {
+        threshold: 0.5 // Trigger when 50% of the element is visible
+      };
+
+      const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             const progressBar = entry.target;
-            const width = progressBar.getAttribute('data-width');
-
-            // Animate the progress bar
+            const width = progressBar.getAttribute('aria-valuenow');
+            // Use a small delay to ensure the initial state is rendered before animating
             setTimeout(() => {
               progressBar.style.width = width + '%';
-            }, 500);
-
-            observer.unobserve(progressBar);
+            }, 100);
+            observer.unobserve(progressBar); // Stop observing after animation
           }
         });
-      }, {
-        threshold: 0.5
-      });
+      }, observerOptions);
 
-      // Start observing all progress bars
       progressBars.forEach(bar => {
-        bar.style.width = '0%'; // Start from 0
+        bar.style.width = '0%'; // Set initial width to 0% for the animation
         observer.observe(bar);
       });
     });
 
+
     // Add click effect for skill categories
     document.querySelectorAll('.skill-category').forEach(category => {
-      category.addEventListener('click', function() {
+      category.addEventListener('click', function () {
         this.style.transform = 'scale(0.98)';
         setTimeout(() => {
           this.style.transform = 'translateY(-5px)';
@@ -487,7 +564,7 @@
       }
     };
 
-    document.getElementById('aboutImage').addEventListener('click', function() {
+    document.getElementById('aboutImage').addEventListener('click', function () {
       this.classList.toggle('flipped');
     });
 
