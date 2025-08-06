@@ -78,6 +78,68 @@ nav {
     width: 100%;
 }
 
+/* Custom Hamburger Icon Animation */
+.navbar-toggler {
+    border: none;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    background-color: transparent;
+    transition: transform 0.3s ease;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.hamburger-icon {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.hamburger-icon span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: var(--text-accent);
+    transition: all 0.3s ease-in-out;
+    position: absolute;
+    left: 0;
+}
+
+/* Default state: Hamburger Icon */
+.hamburger-icon span:first-child {
+    top: 0;
+}
+
+.hamburger-icon span:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.hamburger-icon span:last-child {
+    bottom: 0;
+}
+
+/* Animate to cross when toggled */
+.hamburger-toggled span:first-child {
+    transform: rotate(45deg);
+    top: 50%;
+}
+
+.hamburger-toggled span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.hamburger-toggled span:last-child {
+    transform: rotate(-45deg);
+    top: 50%;
+}
+
 /* Hero Section */
 .hero {
     height: 100vh;
@@ -208,18 +270,31 @@ nav {
 }
 
 .section-title {
-    font-size: 2.5rem;
+    font-size: 3rem;
+    /* Increased font size for a bolder look */
     font-weight: 700;
+    /* Ensured bold font weight */
     margin-bottom: 1rem;
     color: var(--text-primary);
     letter-spacing: -0.5px;
 }
 
 .section-subtitle {
-    font-size: 1.1rem;
+    font-size: 1.25rem;
+    /* Increased font size for better readability */
     color: var(--text-secondary);
     margin-bottom: 4rem;
     max-width: 600px;
+    margin-left: auto;
+    /* Centered the subtitle */
+    margin-right: auto;
+    /* Centered the subtitle */
+    line-height: 1.6;
+    /* Improved line spacing for readability */
+}
+
+.text-center {
+    text-align: center;
 }
 
 /* About Section */
@@ -378,12 +453,6 @@ nav {
 }
 
 /* Skills Section */
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
-}
-
 .skill-category {
     background: var(--card-bg);
     border: 1px solid var(--border-color);
@@ -431,20 +500,20 @@ nav {
     font-weight: 600;
 }
 
-.skill-bar {
-    width: 100px;
-    height: 6px;
+/* Corrected Bootstrap progress bar styles */
+.progress {
+    width: 100px; /* Set a fixed width for the bar container */
+    height: 6px; /* Explicitly set height */
     background: rgba(143, 188, 143, 0.2);
     border-radius: 3px;
-    overflow: hidden;
-    margin-left: 1rem;
+    margin-left: 1rem; /* Adjust spacing */
 }
 
-.skill-progress {
-    height: 100%;
-    background: linear-gradient(90deg, var(--primary-green), var(--text-accent));
-    border-radius: 3px;
-    animation: growBar 2s ease-out;
+.progress-bar {
+    background-image: linear-gradient(90deg, var(--primary-green), var(--text-accent));
+    transition: width 1s ease-in-out;
+    width: 0;
+    height: 100%; /* Make the bar fill the container height */
 }
 
 /* Projects Section */
@@ -657,6 +726,7 @@ footer p {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -668,6 +738,7 @@ footer p {
         opacity: 0;
         transform: translateX(30px);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);
@@ -678,64 +749,8 @@ footer p {
     from {
         width: 0;
     }
+
     to {
         width: 100%;
-    }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .hero-content {
-        grid-template-columns: 1fr;
-        text-align: left;
-    }
-
-    .hero-text h1 {
-        font-size: 2.8rem;
-    }
-
-    .about-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .about-image {
-        margin: 0 auto;
-    }
-
-    .about-highlights {
-        grid-template-columns: 1fr;
-    }
-
-    .contact-content {
-        grid-template-columns: 1fr;
-    }
-
-    .nav-links {
-        display: none;
-    }
-
-    .cta-buttons {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .projects-grid,
-    .skills-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-text h1 {
-        font-size: 2.2rem;
-    }
-
-    .section {
-        padding: 4rem 0;
-    }
-
-    .container {
-        padding: 0 15px;
     }
 }
