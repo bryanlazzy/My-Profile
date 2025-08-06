@@ -20,124 +20,150 @@ body {
 
 /* Header */
 header {
-    background: rgba(26, 26, 26, 0.95);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--border-color);
-    padding: 1rem 0;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    transition: all 0.3s ease;
+  background: rgba(26, 26, 26, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-color);
+  padding: 1rem 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
 }
 
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--text-accent);
-    letter-spacing: -0.5px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-accent);
+  letter-spacing: -0.5px;
 }
 
 .nav-links {
-    display: flex;
-    list-style: none;
-    gap: 2.5rem;
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
 }
 
 .nav-links a {
-    color: var(--text-secondary);
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 0.95rem;
-    transition: all 0.3s ease;
-    position: relative;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
 .nav-links a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -5px;
-    left: 0;
-    background: var(--text-accent);
-    transition: width 0.3s ease;
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background: var(--text-accent);
+  transition: width 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: var(--text-accent);
+  color: var(--text-accent);
 }
 
 .nav-links a:hover::after {
-    width: 100%;
+  width: 100%;
 }
 
 /* Custom Hamburger Icon Animation */
 .navbar-toggler {
-    border: none;
-    padding: 0;
-    width: 30px;
-    height: 30px;
-    position: relative;
-    background-color: transparent;
-    transition: transform 0.3s ease;
+  border: none;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  background-color: transparent;
+  transition: transform 0.3s ease;
 }
 
 .navbar-toggler:focus {
-    box-shadow: none;
+  box-shadow: none;
 }
 
 .hamburger-icon {
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
 
 .hamburger-icon span {
-    display: block;
-    height: 2px;
-    width: 100%;
-    background-color: var(--text-accent);
-    transition: all 0.3s ease-in-out;
-    position: absolute;
-    left: 0;
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: var(--text-accent);
+  transition: all 0.3s ease-in-out;
+  position: absolute;
+  left: 0;
 }
 
 /* Default state: Hamburger Icon */
 .hamburger-icon span:first-child {
-    top: 0;
+  top: 0;
 }
 
 .hamburger-icon span:nth-child(2) {
-    top: 50%;
-    transform: translateY(-50%);
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .hamburger-icon span:last-child {
-    bottom: 0;
+  bottom: 0;
 }
 
 /* Animate to cross when toggled */
 .hamburger-toggled span:first-child {
-    transform: rotate(45deg);
-    top: 50%;
+  transform: rotate(45deg);
+  top: 50%;
 }
 
 .hamburger-toggled span:nth-child(2) {
-    opacity: 0;
-    transform: scaleX(0);
+  opacity: 0;
+  transform: scaleX(0);
 }
 
 .hamburger-toggled span:last-child {
-    transform: rotate(-45deg);
-    top: 50%;
+  transform: rotate(-45deg);
+  top: 50%;
+}
+
+/* All screens */
+.navbar-collapse {
+    /* Apply a smooth transition on max-height */
+    transition: max-height 0.5s ease-in-out;
+}
+
+/* For screens smaller than 992px (mobile view) */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        /* Initially hide the content */
+        overflow: hidden;
+        max-height: 0;
+    }
+}
+
+/* For screens 992px and larger (desktop view) */
+@media (min-width: 992px) {
+    .navbar-collapse {
+        /* Reset the animation properties for desktop */
+        max-height: none !important;
+        overflow: visible;
+        display: flex !important;
+        flex-basis: auto;
+    }
 }
 
 /* Hero Section */
@@ -502,18 +528,22 @@ nav {
 
 /* Corrected Bootstrap progress bar styles */
 .progress {
-    width: 100px; /* Set a fixed width for the bar container */
-    height: 6px; /* Explicitly set height */
+    width: 100px;
+    /* Set a fixed width for the bar container */
+    height: 6px;
+    /* Explicitly set height */
     background: rgba(143, 188, 143, 0.2);
     border-radius: 3px;
-    margin-left: 1rem; /* Adjust spacing */
+    margin-left: 1rem;
+    /* Adjust spacing */
 }
 
 .progress-bar {
     background-image: linear-gradient(90deg, var(--primary-green), var(--text-accent));
     transition: width 1s ease-in-out;
     width: 0;
-    height: 100%; /* Make the bar fill the container height */
+    height: 100%;
+    /* Make the bar fill the container height */
 }
 
 /* Projects Section */
