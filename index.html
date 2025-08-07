@@ -517,7 +517,7 @@
         // Mobile: use default mailto behavior
         window.location.href = 'mailto:bryanlazaro35@gmail.com';
       } else {
-        // Desktop: show popup instead of opening Gmail
+        // Desktop: show popup
         document.getElementById('emailPopup').style.display = 'block';
         document.body.style.overflow = 'hidden';
       }
@@ -569,12 +569,12 @@
       sendBtn.disabled = true;
       sendBtn.textContent = 'Sending...';
 
-      // Replace the simulate function with EmailJS
+      
       sendEmailWithEmailJS(emailData);
     });
 
     function simulateEmailSend(emailData) {
-      // REPLACE THIS with actual email sending logic
+      
       setTimeout(() => {
         showMessage('Email sent successfully! Thank you for contacting me.', 'success');
         sendBtn.disabled = false;
@@ -595,8 +595,7 @@
     }
 
     // EmailJS Configuration
-    // Initialize EmailJS with your public key
-    emailjs.init("2tKeNdA6AKhrZAxsp"); // Replace with your actual public key
+    emailjs.init("2tKeNdA6AKhrZAxsp"); 
 
     function sendEmailWithEmailJS(emailData) {
       const templateParams = {
@@ -720,3 +719,4 @@
 </body>
 
 </html>
+
