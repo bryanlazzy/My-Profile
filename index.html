@@ -32,7 +32,7 @@
   <header>
     <nav class="navbar navbar-expand-lg fixed-top bg-dark navbar-dark">
       <div class="container">
-        <a class="navbar-brand logo" href="#">BL</a>
+        <a class="navbar-brand logo" href="#" onclick="reloadAndScrollToTop(event)">BL</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <div class="hamburger-icon">
@@ -508,6 +508,19 @@
           navbarCollapse.style.maxHeight = navbarCollapse.scrollHeight + 'px';
         }
       });
+    });
+
+    function reloadAndScrollToTop(event) {
+      event.preventDefault(); // Prevent default anchor behavior
+
+      // Reload the page
+      window.location.reload();
+      window.location.href = window.location.href.split('#')[0];
+    }
+
+    // Ensure page starts at top after reload
+    window.addEventListener('load', function () {
+      window.scrollTo(0, 0);
     });
 
     document.getElementById('emailBtn').addEventListener('click', function (e) {
