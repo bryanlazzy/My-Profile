@@ -101,15 +101,18 @@
 
       <div class="row align-items-start gy-5">
         <div class="col-lg-5 d-flex justify-content-center">
-          <div class="about-image" id="aboutImage">
-            <div class="image-card">
-              <div class="card-front">
-                <img src="images/avatar.png" alt="bryan-avatar" class="img-fluid">
-              </div>
-              <div class="card-back">
-                <img src="images/bgl.jpg" alt="bryan-real-photo" class="img-fluid">
+          <div>
+            <div class="about-image" id="aboutImage">
+              <div class="image-card">
+                <div class="card-front">
+                  <img src="images/avatar.png" alt="bryan-avatar" class="img-fluid">
+                </div>
+                <div class="card-back">
+                  <img src="images/bgl.jpg" alt="bryan-real-photo" class="img-fluid">
+                </div>
               </div>
             </div>
+            <div class="click-me-text" onclick="flipImage()">Click Me!</div>
           </div>
         </div>
 
@@ -517,7 +520,7 @@
         // Mobile: use default mailto behavior
         window.location.href = 'mailto:bryanlazaro35@gmail.com';
       } else {
-        // Desktop: show popup
+        // Desktop: show popup instead of opening Gmail
         document.getElementById('emailPopup').style.display = 'block';
         document.body.style.overflow = 'hidden';
       }
@@ -569,12 +572,12 @@
       sendBtn.disabled = true;
       sendBtn.textContent = 'Sending...';
 
-      
+      // Replace the simulate function with EmailJS
       sendEmailWithEmailJS(emailData);
     });
 
     function simulateEmailSend(emailData) {
-      
+      // REPLACE THIS with actual email sending logic
       setTimeout(() => {
         showMessage('Email sent successfully! Thank you for contacting me.', 'success');
         sendBtn.disabled = false;
@@ -595,7 +598,8 @@
     }
 
     // EmailJS Configuration
-    emailjs.init("2tKeNdA6AKhrZAxsp"); 
+    // Initialize EmailJS with your public key
+    emailjs.init("2tKeNdA6AKhrZAxsp"); // Replace with your actual public key
 
     function sendEmailWithEmailJS(emailData) {
       const templateParams = {
@@ -710,13 +714,15 @@
       }
     };
 
-    document.getElementById('aboutImage').addEventListener('click', function () {
-      this.classList.toggle('flipped');
-    });
+    function flipImage() {
+      const aboutImage = document.getElementById('aboutImage');
+      aboutImage.classList.toggle('flipped');
+    }
+
+    document.getElementById('aboutImage').addEventListener('click', flipImage);
 
     setTimeout(typeWriter, 1000);
   </script>
 </body>
 
 </html>
-
