@@ -434,7 +434,7 @@
             <p class="mb-4">I'm excited about the possibility of contributing to your team and growing my skills in a
               professional environment. Let's discuss how my fresh perspective and technical foundation can add value to
               your projects.</p>
-            <a href="mailto:bryanlazaro35@gmail.com" class="btn cta-primary">Send Message</a>
+            <a href="mailto:bryanlazaro35@gmail.com" class="btn cta-primary" id="emailBtn">Send Message</a>
           </div>
         </div>
       </div>
@@ -473,6 +473,32 @@
           navbarCollapse.style.maxHeight = navbarCollapse.scrollHeight + 'px';
         }
       });
+    });
+
+    document.getElementById('emailBtn').addEventListener('click', function (e) {
+      // Check if it's a mobile device
+      const isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+      if (!isMobile) {
+        // Desktop: open Gmail inbox first, then compose popup
+        e.preventDefault();
+
+        // Open Gmail inbox in a new tab
+        const inboxWindow = window.open('https://mail.google.com/mail/u/0/#inbox', '_blank');
+
+        // Wait a moment for inbox to load, then open compose popup
+        setTimeout(function () {
+          // Calculate position for bottom right
+          const width = 640;
+          const height = 480;
+          const left = screen.width - width - 50; // 50px margin from right edge
+          const top = screen.height - height - 100; // 100px margin from bottom (accounting for taskbar)
+
+          window.open('https://mail.google.com/mail/?view=cm&fs=1&to=bryanlazaro35@gmail.com', '_blank',
+            `width=${width},height=${height},left=${left},top=${top},scrollbars=yes,resizable=yes`);
+        }, 1500);
+      }
+      // Mobile: let the default mailto behavior work
     });
 
     // Header background change on scroll
