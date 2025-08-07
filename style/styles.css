@@ -478,6 +478,39 @@ nav {
     content: "Click to flip back";
 }
 
+/* Click Me text */
+.click-me-text {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 1rem;
+    color: var(--text-accent);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.click-me-text:hover {
+    color: var(--primary-green);
+    transform: scale(1.05);
+}
+
+/* Original click indicator (keeping it smaller) */
+.about-image::after {
+    content: "Click to flip";
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.about-image.flipped::after {
+    content: "Click to flip back";
+}
+
 /* Skills Section */
 .skill-category {
     background: var(--card-bg);
